@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Super Sprinter 3000</title>
+
+</head>
+
+<body>
+
+<h2>User Story Manager</h2>
+
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Story title</td>
+        <td>User story</td>
+        <td>Acceptance criteria</td>
+        <td>Business value</td>
+        <td>Estimation</td>
+        <td>Status</td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+    {% for row in table %}
+        <tr>
+            {% for data in row %}
+                <td>{{data}}</td>
+            {%endfor%}
+
+            <td><img src="http://images.clipartpanda.com/pen-clipart-pen-clipart.png" width="40" height="30" alt="Edit"></td>
+            <td><img src="http://clipground.com/images/trash-bin-clipart-7.jpg" width="30" height="30" alt="Delete"></td>
+        </tr>
+    {%endfor%}
+
+</table>
+
+</body>
