@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Super Sprinter 3000</title>
+
+</head>
+
+<body>
+    <form action="story_list.csv" method="post">
+    
+    <p>Story title:</p>
+    <p><input type="text" name="title" value="Story title"></p> 
+
+    <p>User story: </p>
+    <p><textarea name="story" rows="5" cols="20">User story</textarea></p>
+
+    <p>Acceptance criteria: </p>
+    <p><textarea name="criteria" rows="5" cols="20">Acceptance criteria</textarea></p>
+
+    <p>Business value: </p>
+    <select>
+        {% for i in range(100, 1500, 100) %}
+            <option>{{ i }}</option>
+        {%endfor%}
+    </select>
+
+    <p>Estimation (h): </p>
+    <select>
+        {% for i in range(0.5, 40, 0.5) %}
+            <option>{{ i }}</option>
+        {%endfor%}
+    </select>
+
+    <p>Status: </p>
+    <select>
+        {% for i in status=["Planning", "TODO", "In progress", "Review", "Done"] %}
+            <option>{{ i }}</option>
+        {%endfor%}
+    </select>
+
+    <p><input type="submit"></p>
+
+    </form>
+
+</body>
