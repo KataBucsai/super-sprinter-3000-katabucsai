@@ -12,7 +12,7 @@ def index():
     return render_template("list.html", table=table)
 
 
-@app.route('/story')
+@app.route('/story', methods=["GET", "POST"])
 def story():
     with open("story_list.csv", "r") as file:
         lines = file.readlines()
@@ -20,7 +20,7 @@ def story():
     new_story = []
     render_template("story.html", new_story=new_story)
     table.append(new_story)
-    with open("sroey_list.csv", "w") as file:
+    with open("story_list.csv", "w") as file:
         for record in table:
             row = ';'.join(record)
             file.write(row + "\n")
